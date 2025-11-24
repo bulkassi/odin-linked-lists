@@ -8,10 +8,10 @@ Firstly, a factory function is created for initializing a node with following at
 
 The linked list factory declares three attribute: `head`, `tail` and `size`, with `size` attribute being used for indicating a size of the list, that is the amount of nodes of list. This allows, if it's needed to get the size of the list, to not traverse the entire list and counting the nodes every time. A better practice, however, would be creating getter functions for all of these attributes rather than exposing them.
 
-`prepend`, `append`, `at`, `pop`, `insertAt` and `removeAt` all run in constant time ($$O(1)$$). `contains` and `find` functions's running time is linear to the size of the list ($$O(n)$$) - the worst-case scenario occurs when the node with specified `value` is `tail`. This goes in line with worst-case running times described in [Big O Cheatsheet](https://www.bigocheatsheet.com/).
+`prepend`, `append`, `at`, `insertAt` and `removeAt` all run in constant time ($$O(1)$$). `pop`, `contains` and `find` functions's running time is linear to the size of the list ($$O(n)$$) - the worst-case scenario occurs when the node with specified `value` is `tail`. This goes in line with worst-case running times described in [Big O Cheatsheet](https://www.bigocheatsheet.com/).
 
 > [!NOTE]
-> Although `at`, `pop`, `insertAt` and `removeAt` require traversing the list just like `contains` and `find`, their running times are independent of the size of the list.
+> `at`, `insertAt` and `removeAt` require traversing the list just like `pop`, `contains` and `find`. Unlike them, however, their running times are independent of the size of the list.
 
 The full code snippet implementing the data structure is presented below.
 ```js
