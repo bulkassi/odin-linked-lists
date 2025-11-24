@@ -10,9 +10,6 @@ The linked list factory declares three attribute: `head`, `tail` and `size`, wit
 
 `prepend`, `append`, `at`, `insertAt` and `removeAt` all run in constant time ($$O(1)$$). `pop`, `contains` and `find` functions's running time is linear to the size of the list ($$O(n)$$) - the worst-case scenario occurs when the node with specified `value` is `tail`. This goes in line with worst-case running times described in [Big O Cheatsheet](https://www.bigocheatsheet.com/).
 
-> [!NOTE]
-> `at`, `insertAt` and `removeAt` require traversing the list just like `pop`, `contains` and `find`. Unlike them, however, their running times are independent of the size of the list.
-
 The full code snippet implementing the data structure is presented below.
 ```js
 function createLinkedList() {
