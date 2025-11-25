@@ -2,8 +2,6 @@
 
 This repository presents an answer to the [Project: Linked Lists](https://www.theodinproject.com/lessons/javascript-linked-lists) task - to create a singly linked list data structure using JavaScript.
 
-## Implemented functions
-
 Firstly, a factory function is created for initializing a node with following attributes: `value` and `nextNode`, which is accessed externally by `node.next`. Since JavaScript always accesses variables by reference rether than by value, the assignment of the reference to the node can be done as simple as `node1.next = node2`. Finnaly, `toString` converts the node into a string object using its `value`.
 
 The linked list factory declares three attribute: `head`, `tail` and `size`, with `size` attribute being used for indicating a size of the list, that is the amount of nodes of list. This allows, if it's needed to get the size of the list, to not traverse the entire list and counting the nodes every time. A better practice, however, would be creating getter functions for all of these attributes rather than exposing them.
@@ -12,13 +10,13 @@ The linked list factory declares three attribute: `head`, `tail` and `size`, wit
 
 The full code snippet implementing the data structure is presented below.
 ```js
-function createLinkedList() {
+function createLinkedList(nodeToStr) {
   function createNode(v) {
     let value = v || null;
     let nextNode = null;
 
     function toString() {
-      return value.toString();
+      return nodeToStr(value);
     }
 
     return {
@@ -173,9 +171,9 @@ function createLinkedList() {
   return {
     append,
     prepend,
-    size,
-    head,
-    tail,
+    getSize: () => size,
+    getHead: () => head,
+    getTail: () => tail,
     at,
     pop,
     contains,
